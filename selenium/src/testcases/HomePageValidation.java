@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class HomePageValidation {
 	
-  @BeforeSuite
+  
   public void configureBorwser(){
 	  
   }
