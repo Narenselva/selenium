@@ -1,6 +1,10 @@
 package com.base;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.testng.xml.LaunchSuite;
 
 public class TestBaseSetup {
 	private WebDriver driver;
@@ -14,7 +18,11 @@ public class TestBaseSetup {
 		switch(broType){
 		
 		case "chrome":
-//			driver = 
+			System.setProperty("WebDriver.chrome.driver", driverPath+"chromedriver.exe");
+			driver = new ChromeDriver();
+			
+		case "firefox":
+			System.out.println("fire fox initiation.");
 		
 		}
 	
@@ -23,8 +31,17 @@ public class TestBaseSetup {
 	public  WebDriver initChromeDriver(){
 		System.out.println("Initializing chromebrowser");
 		System.setProperty("webdriver.chrome.driver",driverPath +"/chromedriver.exe");
+		setDriver("chrome","http://toolsqa.com/");
 		return driver;
-		
+			}
+	
+	public void launchBrowser(){
+		initChromeDriver();
 	}
+	public static void main(String[] args) {
+		TestBaseSetup obj =  new TestBaseSetup();
+		obj.launchBrowser();
+		obj.driver.quit();
+ 	}
 	
 }

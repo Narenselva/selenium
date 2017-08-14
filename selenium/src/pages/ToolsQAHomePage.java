@@ -12,7 +12,7 @@ public class ToolsQAHomePage {
 	public ToolsQAHomePage(WebDriver driver) {
 		this.driver  = driver;
 		// TODO Auto-generated constructor stub
-	}
+	} 
 	
 	public void clicOnTutorialLink(){
 		driver.findElement(tutorialLink);
