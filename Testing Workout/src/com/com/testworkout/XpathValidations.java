@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.library.Screenshot;
+
 public class XpathValidations {
 static String driverPath = "C:/Users/Narendiran/Downloads/chromedriver_win321/";
 	
@@ -26,7 +28,8 @@ static String driverPath = "C:/Users/Narendiran/Downloads/chromedriver_win321/";
  @Test(priority = 1)
   public void launchBrowser() {
 	 
-	  driver.get("https://addons.mozilla.org/en-us/firefox/addon/firepath/");
+	  driver.get("https://addons.mozilla.org/en-us/firefox/addon/firepath");
+	  Screenshot.takeScreenShot("login", driver);
 	  
 	
   }
@@ -44,7 +47,9 @@ static String driverPath = "C:/Users/Narendiran/Downloads/chromedriver_win321/";
   }
   @Test(priority = 3)
   public void navigateToMozillaHomePage(){
+	  
 	  driver.findElement(By.xpath("html/body/div[1]/div/div/div/div/a")).click();
+	  Screenshot.takeScreenShot("mozilla homepage", driver);
 	  //driver.navigate().to(url);
   }
  
