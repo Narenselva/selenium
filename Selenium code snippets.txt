@@ -1,0 +1,57 @@
+//creating java script executor
+
+
+
+
+JavascriptExecutor js =  JavascriptExecutor(Webdriver)
+
+//Clicking a element in java script executor
+js.executeScript("arugument[0].click();",element
+
+//taking screenshot when a error occrs
+
+WebDriver drivre=  new ChromeDriver();
+EventFiringWebDriver eventDriver = new EventFiringWebDriver(driver).register(new AbstractWebDriverEventLListener()){
+@override
+public void onException(Throwable thro,WebDriver driver){
+File screen= ((TakeScreenshot)drviver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(screen,new File("c:\\slenium Testing\screen.png");
+});
+
+}
+
+
+
+//Selecting a particular text in browser
+driver.get("/");
+Webelement ele =  driver.findElement(By.xpath(""));
+
+
+Actions act =  new Actions(driver);
+act.dragAndDrop(source_locator,target_Locator).perform();
+
+//writting values using javascriptExecutor in selenium
+
+JavascriptExecutor js =  (JavascriptExecutor)driver;
+js.executeScript("document.getElementById('User').value="Test");
+
+
+Actions dummy = new Actions(driver);
+dummy.doubleClick(ele).bulid().perform();
+
+//Handling popup
+String srcWin= driver.getWindowhandle();
+Alert pop =  driver.switchTo().alert();
+pop.dismiss();
+pop.accept();
+driver.switchTo().window(srcWin);
+
+//Invoking chrome
+System.setProperty('webdriver.Chrome.driver","filepath.exe");
+WebDriver driver = new ChromeDriver();
+
+//Right click on context menu
+Actions act = new Actions(driver);
+act.moveToElement(ele).perform();
+act.contextClick().perform();
+
