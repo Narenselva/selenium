@@ -1,3 +1,4 @@
+
 //creating java script executor
 
 
@@ -19,7 +20,7 @@ FileUtils.copyFile(screen,new File("c:\\slenium Testing\screen.png");
 });
 
 }
-
+//
 
 
 //Selecting a particular text in browser
@@ -55,3 +56,74 @@ Actions act = new Actions(driver);
 act.moveToElement(ele).perform();
 act.contextClick().perform();
 
+//Mouse move over 
+Actions act =new Actions(driver);
+act.moveToElement(ele).built().perform();
+
+//setting prority and enable in Test NG
+
+@Test(priority=1,enabled=false)
+
+//Logging in Log4j
+private static Logger log =  Logger.getLogger(Log.Class.getName());
+log.info("Implicit wait applied");
+
+
+//parameter in TestNG
+<suite name = "test Suite">
+ 	<test name= "fist">
+	<parameter name="userName" value ="Naren">
+	<parameter name="password" value="Tester">
+		<classes>
+		<class name="automatio.testcase">
+		</classes>
+	</test>
+</suite>
+
+//Reading data from an Excel sheet
+
+private static XSSFSheet ExcelWorkSheet;
+private static XSSFWorkbook ExcelWorkBook;
+private statis XSSFCell cell;
+private static XSSFRow row;
+
+FileInputStream ExcelFile= new FileInputStream(filepath);
+
+ExcelWorkBook = new ExcelWorkbook(ExcelFile);
+ExcelWorkSheet = ExcelWorkBook.getSheet(sheetName);
+int startRow = 1;
+int startCol=1;
+int ci,cj;
+int totalRows = ExcelWoorksheet.getLastRowNum();
+int totalCols = getColumnCount();
+tabArray=new String[totalRows][totalCols];
+ 
+			   ci=0;
+ 
+			   for (int i=startRow;i<=totalRows;i++, ci++) {           	   
+ 
+				  cj=0;
+ 
+				   for (int j=startCol;j<=totalCols;j++, cj++){
+ 
+					   tabArray[ci][cj]=getCellData(i,j);
+ 
+					   System.out.println(tabArray[ci][cj]);  
+ 
+						}
+ 
+					}
+ 
+				}
+
+
+
+
+
+ public int getColumnCount(String sheetName)
+   {
+       sheet = workbook.getSheet(sheetName);
+       row = sheet.getRow(0);
+       int colCount = row.getLastCellNum();
+       return colCount;
+   }
